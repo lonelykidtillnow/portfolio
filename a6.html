@@ -1,0 +1,202 @@
+<!-- <button id="one">show</button>
+<script>
+    var a=document.getElementById("one")
+    a.addEventListener("click",function(){
+        alert("bye")
+    })
+    a.addEventListener("mouseover",function(){
+        alert("hello")
+    })
+</script> -->
+
+
+<!-- <input id="one"></input>
+<button onclick="change()">Add</button>
+<ul id="two">
+</ul>
+<script>
+    function change(){
+    var a=document.getElementById("one")
+    var b=document.getElementById("two")
+    var c=document.createElement("li")
+    c.innerHTML=a.value+"&nbsp;<button onclick='change1(event)'>Delete</button>"
+    b.append(c)
+    }
+    function change1(){
+        event.target.parentElement.remove()
+    }
+</script> -->
+
+
+<html>
+    <head>
+        <style>
+            #a{
+                background-color: palevioletred;
+                height: 50px;
+                border-top-left-radius: 20px;
+                border-top-right-radius: 20px;
+                padding-left: 1em;
+                padding-top: 0.5em;
+            }
+            #b{
+                background-color: black;
+                color: white;
+                h2{
+                    color: palevioletred;
+                }
+                .a{
+                    opacity: 0.8;
+                }
+                button{
+                    background-color: red;
+                    border-radius: 5px;
+                }
+                display: inline-block;
+                width: 300px;
+                padding: 20px;
+                border-radius: 20px;
+            }
+            #b{
+                margin-left: 20px;
+                margin-top: 20px;
+                h2,p{
+                    margin-bottom: 0%;
+                }
+            }
+            #c{
+                background-color: palevioletred;
+                height: 75px;
+                width: 75px;
+                font-size: 50px;
+                border-radius: 100px;
+                border: none;
+                display: block;
+                position: fixed;
+                bottom: 5%;
+                right: 5%;
+            }
+            #d{
+                background-color: grey;
+                opacity: 0.9;
+                position: fixed;
+                height: 100%;
+                width: 100%;
+                top: 0;
+                left: 0%;
+                z-index: 1;
+            }
+            #e{
+                background-color: yellow;
+                color: black;
+                display: inline-block;
+                width: 600px;
+                #x,#y{
+                    margin-top: 10px;
+                    background-color: black;
+                    color: white;
+                    margin-right: 20px;
+                    margin-left: 20px;
+                }
+                text-align: center;
+                padding: 20px;
+                border-radius: 30px;
+            }
+            #e{
+                #p,#q,#r{
+                    margin-bottom: 5px;
+                    border: none;
+                    border-bottom: 2px solid black;
+                    background: transparent;
+                    opacity: 0.8;
+                }
+                position: fixed;
+                top: 10%;
+                left: 25%;
+                z-index: 2;
+            }
+            #d,#e{
+                display: none;
+            }
+            #f{
+                background-color: black;
+                color: white;
+                display: inline-block;
+                width: fit-content;
+                padding: 10px;
+                border-radius: 20px;
+                h2{
+                    color: palevioletred;
+                }
+                .a{
+                    opacity: 0.8;
+                }
+                button{
+                    background-color: red;
+                    border-radius: 10px;
+                }
+                margin-left: 20px;
+                position: fixed;
+                top: 7.5em;
+                display: none;
+            }
+        </style>
+        <script>
+            function change(){
+                var a=document.getElementById("d")
+                var b=document.getElementById("e")
+                a.style.display="block"
+                b.style.display="block"
+            }
+
+            function cancel(){
+                var a=document.getElementById("d")
+                var b=document.getElementById("e")
+                a.style.display="none"
+                b.style.display="none"
+            }
+
+            function add(){
+                var a=document.getElementById("p").value
+                var b=document.getElementById("q").value
+                var c=document.getElementById("r").value
+                var d=document.getElementById("f")
+                var e=document.createElement("div")
+                e.innerHTML=`<h2>${a}</h2> <p><b>${b}</b></p> <p>${c}</p> <button onclick="del()">Delete</button>`
+                d.style.display="inline-block"
+                d.append(e)
+                cancel()
+            }
+
+            function del(){
+                event.target.parentElement.remove()
+            }
+        </script>
+    </head>
+    <body>
+        <h1 id="a">BookSky</h1>
+
+        <div id="b">
+            <h2>Rich Dad Poor Dad</h2>
+            <p><b>Robert</b></p>
+            <p class="a">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum natus consequuntur, ad illo et, dicta mollitia dolorem corrupti quibusdam amet, commodi officia! Similique facilis totam exercitationem, omnis reiciendis commodi, sed incidunt blanditiis, possimus ut accusantium cumque aspernatur neque beatae. Praesentium, maxime eligendi repellendus ipsa officiis aliquid sit officia quidem necessitatibus.</p><br>
+            <button onclick="del()">Delete</button>
+        </div>
+
+        <button id="c" onclick="change()">+</button>
+
+        <div id="d"></div>
+
+        <div id="e">
+            <h1>Add Book</h1>
+            <input type="text" placeholder="Book Title" id="p"></input><br>
+            <input type="text" placeholder="Book Author" id="q"></input><br>
+            <textarea placeholder="Short Description" id="r"></textarea><br>
+            <button id="x" onclick="add()">Add</button>
+            <button id="y" onclick="cancel()">Cancel</button>
+        </div>
+
+        <div id="f"> </div>
+    </body>
+</html>
+
